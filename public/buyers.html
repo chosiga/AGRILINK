@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyers | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="media/images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>  
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html" aria-current="page">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="buyers-heading">
+            <h1 id="buyers-heading">Buyers</h1>
+            <p>Buy fresh produce straight from Zambian farmers.</p>
+
+            <a href="products.html">Browse Products</a>
+            <a href="#place-order">Place a Bulk Order</a>
+        </section>
+
+        <section aria-labelledby="benefits-heading">
+            <h2 id="benefits-heading">Why Buy With Us</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Fresh From the Farm</h3>
+                        <p>Buy directly from farmers with no long supply chain.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Fair Prices</h3>
+                        <p>Compare prices from different farmers before you buy.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Delivered to You</h3>
+                        <p>Choose a transporter to bring your order to your door.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="how-heading">
+            <h2 id="how-heading">How to Buy</h2>
+
+            <ol>
+                <li>
+                    <article>
+                        <h3>Find Products</h3>
+                        <p>Search or browse what farmers have listed.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Place Your Order</h3>
+                        <p>Choose the quantity and confirm your order.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Receive Delivery</h3>
+                        <p>Your produce is collected and delivered to you.</p>
+                    </article>
+                </li>
+            </ol>
+        </section>
+
+        <section id="place-order" aria-labelledby="order-heading">
+            <h2 id="order-heading">Place a Bulk Order</h2>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="buyer-name">Your name or business</label>
+                    <input type="text" id="buyer-name" name="name" required>
+                </p>
+                <p>
+                    <label for="buyer-phone">Phone number</label>
+                    <input type="tel" id="buyer-phone" name="phone" required>
+                </p>
+                <p>
+                    <label for="buyer-product">Product needed</label>
+                    <input type="text" id="buyer-product" name="product" required>
+                </p>
+                <p>
+                    <label for="buyer-quantity">Quantity (kg)</label>
+                    <input type="number" id="buyer-quantity" name="quantity" min="1" required>
+                </p>
+                <p>
+                    <label for="delivery-address">Delivery address</label>
+                    <textarea id="delivery-address" name="address" rows="3" required></textarea>
+                </p>
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "INDEX.HTML",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1788192239897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1788192476430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,28 +44,28 @@\n                 <h3>Farmers</h3>\r\n             </article>\r\n \r\n             <article>\r\n-                <h3>Buyers</h3>\r\n+                <h4>Buyers</h4>\r\n             </article>\r\n \r\n             <article>\r\n-                <h3>Transport</h3>\r\n+                <h5>Transport</h5>\r\n             </article>\r\n         </section>\r\n \r\n         <section>\r\n-            <h2>Popular Products</h2>\r\n+            <h6>Popular Products</h6>\r\n \r\n             <article>\r\n                 <img src=\"images/maize.jpg\" alt=\"Maize\">\r\n-                <h3>Maize</h3>\r\n+                <h7>Maize</h7>\r\n                 <button>View</button>\r\n             </article>\r\n \r\n             <article>\r\n                 <img src=\"images/tomatoes.jpg\" alt=\"Tomatoes\">\r\n-                <h3>Tomatoes</h3>\r\n+                <h5>Tomatoes</h5>\r\n                 <button>View</button>\r\n             </article>\r\n         </section>\r\n \r\n"
+                },
+                {
+                    "date": 1788258704366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n             </article>\r\n \r\n             <article>\r\n                 <img src=\"images/tomatoes.jpg\" alt=\"Tomatoes\">\r\n-                <h5>Tomatoes</h5>\r\n+                <h8>Tomatoes</h8>\r\n                 <button>View</button>\r\n             </article>\r\n         </section>\r\n \r\n"
+                },
+                {
+                    "date": 1788259468565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,15 +57,15 @@\n             <h6>Popular Products</h6>\r\n \r\n             <article>\r\n                 <img src=\"images/maize.jpg\" alt=\"Maize\">\r\n-                <h7>Maize</h7>\r\n+                <h7>Maize</h7> <br>\r\n                 <button>View</button>\r\n             </article>\r\n \r\n             <article>\r\n                 <img src=\"images/tomatoes.jpg\" alt=\"Tomatoes\">\r\n-                <h8>Tomatoes</h8>\r\n+                <h8>Tomatoes</h8> <br>\r\n                 <button>View</button>\r\n             </article>\r\n         </section>\r\n \r\n"
+                }
+            ],
+            "date": 1788192239897,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>AgriLink Zambia</title>\r\n    <link rel=\"stylesheet\" href=\"css/style.css\">\r\n</head>\r\n\r\n<body>\r\n\r\n    <header>\r\n        <img src=\"images/logo.png\" alt=\"AgriLink Zambia logo\">\r\n\r\n        <input type=\"search\" placeholder=\"Search products\">\r\n\r\n        <button>Login</button>\r\n        <button>Register</button>\r\n    </header>\r\n\r\n    <nav>\r\n        <a href=\"index.html\">Home</a>\r\n        <a href=\"products.html\">Products</a>\r\n        <a href=\"farmers.html\">Farmers</a>\r\n        <a href=\"buyers.html\">Buyers</a>\r\n        <a href=\"transport.html\">Transport</a>\r\n    </nav>\r\n\r\n    <main>\r\n\r\n        <section>\r\n            <h1>From Farm to Your Door</h1>\r\n            <p>Connect farmers, buyers and transporters.</p>\r\n\r\n            <button>Buy Products</button>\r\n            <button>Sell Products</button>\r\n        </section>\r\n\r\n        <section>\r\n            <h2>How It Works</h2>\r\n\r\n            <article>\r\n                <h3>Farmers</h3>\r\n            </article>\r\n\r\n            <article>\r\n                <h3>Buyers</h3>\r\n            </article>\r\n\r\n            <article>\r\n                <h3>Transport</h3>\r\n            </article>\r\n        </section>\r\n\r\n        <section>\r\n            <h2>Popular Products</h2>\r\n\r\n            <article>\r\n                <img src=\"images/maize.jpg\" alt=\"Maize\">\r\n                <h3>Maize</h3>\r\n                <button>View</button>\r\n            </article>\r\n\r\n            <article>\r\n                <img src=\"images/tomatoes.jpg\" alt=\"Tomatoes\">\r\n                <h3>Tomatoes</h3>\r\n                <button>View</button>\r\n            </article>\r\n        </section>\r\n\r\n    </main>\r\n\r\n    <footer>\r\n        <p>AgriLink Zambia</p>\r\n        <p>Contact Us</p>\r\n        <p>© 2026 AgriLink Zambia</p>\r\n    </footer>\r\n\r\n</body>\r\n</html>\r\n"
+        }
+    ]
+}

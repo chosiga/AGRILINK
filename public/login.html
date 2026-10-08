@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="media/images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html" aria-current="page">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>  
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="login-heading">
+            <h1 id="login-heading">Login</h1>
+            <p>Welcome back. Log in to manage your orders and listings.</p>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="login-email">Email or phone number</label>
+                    <input type="text" id="login-email" name="username" autocomplete="username" required>
+                </p>
+                <p>
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+                </p>
+                <p>
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </p>
+                <button type="submit">Login</button>
+            </form>
+
+            <p><a href="#">Forgot your password?</a></p>
+            <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>
