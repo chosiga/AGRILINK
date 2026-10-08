@@ -1,0 +1,552 @@
+/* AgriLink Zambia - shared stylesheet
+   Palette: forest green, maize gold, soil brown, on a pale field-green ground */
+
+:root {
+    --green-900: #173f2a;
+    --green-700: #1f5b3a;
+    --green-100: #e4efe1;
+    --gold: #f2b731;
+    --gold-dark: #c98f0a;
+    --soil: #5a3e2b;
+    --ink: #1f2a22;
+    --ground: #f6f9f2;
+    --white: #ffffff;
+    --line: #d3ddcd;
+
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-head: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+
+    --page-width: 70rem;
+    --gutter: max(1rem, calc((100% - var(--page-width)) / 2));
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--ground);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-head);
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--green-900);
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: var(--green-700);
+}
+
+p {
+    margin: 0 0 0.9rem;
+    max-width: 65ch;
+}
+
+a {
+    color: var(--green-700);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--green-900);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold-dark);
+    outline-offset: 2px;
+}
+
+/* ---------- Header ---------- */
+
+body > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    padding: 0.75rem var(--gutter);
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+body > header > a:first-child img {
+    height: 3.25rem;
+    width: auto;
+}
+
+body > header form[role="search"] {
+    flex: 1 1 14rem;
+    max-width: 28rem;
+}
+
+input[type="search"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    background: var(--ground);
+    font: inherit;
+}
+
+body > header nav {
+    margin-left: auto;
+}
+
+body > header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > header nav a {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body > header nav li:last-child a {
+    background: var(--green-700);
+    color: var(--white);
+}
+
+body > header nav li:last-child a:hover {
+    background: var(--green-900);
+}
+
+body > header nav a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--gold);
+}
+
+body > header nav span {
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    font-weight: 600;
+    color: var(--green-900);
+}
+
+body > header nav button {
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    background: var(--green-700);
+    color: var(--white);
+}
+
+body > header nav button:hover {
+    background: var(--green-900);
+    color: var(--white);
+}
+
+/* ---------- Main navigation ---------- */
+
+body > nav {
+    background: var(--green-700);
+    padding: 0 var(--gutter);
+}
+
+body > nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > nav a {
+    display: block;
+    padding: 0.85rem 1.1rem;
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body > nav a:hover {
+    background: var(--green-900);
+    color: var(--white);
+}
+
+body > nav a[aria-current="page"] {
+    background: var(--green-900);
+    box-shadow: inset 0 -4px 0 var(--gold);
+}
+
+/* ---------- Page sections ---------- */
+
+main > section {
+    padding: 2.75rem var(--gutter);
+}
+
+main > section + section {
+    border-top: 1px solid var(--line);
+}
+
+/* First section without a form = page banner */
+main > section:first-child:not(:has(form)) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: var(--green-700);
+    color: var(--white);
+    border-top: 0;
+}
+
+main > section:first-child:not(:has(form)) h1,
+main > section:first-child:not(:has(form)) h2 {
+    color: var(--white);
+}
+
+main > section:first-child:not(:has(form)) p {
+    font-size: 1.15rem;
+    color: #e3efe0;
+}
+
+/* Login and register: form sits in a centred panel */
+main > section:first-child:has(form) {
+    max-width: 36rem;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 6px solid var(--gold);
+    border-radius: 10px;
+}
+
+/* ---------- Buttons ---------- */
+
+button,
+main > section > a,
+article > a {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+button,
+main > section > a {
+    background: var(--gold);
+    color: var(--green-900);
+}
+
+button:hover,
+main > section > a:hover {
+    background: #f7c85a;
+    color: var(--green-900);
+}
+
+main > section:first-child > a + a {
+    background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+main > section:first-child > a + a:hover {
+    background: var(--white);
+    color: var(--green-900);
+}
+
+article > a {
+    margin-top: auto;
+    background: var(--green-700);
+    color: var(--white);
+}
+
+article > a:hover {
+    background: var(--green-900);
+    color: var(--white);
+}
+
+/* ---------- Lists and cards ---------- */
+
+main ul,
+main ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+main li > article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.25rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+main li > article p {
+    margin-bottom: 0.4rem;
+    color: var(--soil);
+}
+
+/* Steps: the content really is a sequence, so number it */
+main ol {
+    counter-reset: step;
+}
+
+main ol > li {
+    counter-increment: step;
+}
+
+main ol > li > article::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--green-900);
+    font-weight: 700;
+}
+
+/* Products and farmers */
+figure {
+    margin: 0 0 0.9rem;
+}
+
+figure img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    background: var(--green-100);
+    color: var(--soil);
+}
+
+figcaption h3 {
+    margin: 0.75rem 0 0;
+}
+
+/* Category links on the products page */
+main nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+main nav a {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--white);
+    border-radius: 2rem;
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+main nav a:hover {
+    background: var(--white);
+    color: var(--green-900);
+}
+
+/* ---------- Forms ---------- */
+
+main form {
+    max-width: 32rem;
+    margin-top: 1.25rem;
+}
+
+main form p {
+    margin-bottom: 1rem;
+    max-width: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline;
+    margin: 0 0 0 0.4rem;
+    font-weight: 400;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--green-700);
+}
+
+main input:not([type="checkbox"]):not([type="radio"]),
+main select,
+main textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #aebba8;
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--ink);
+    font: inherit;
+}
+
+main input:focus,
+main select:focus,
+main textarea:focus {
+    border-color: var(--green-700);
+    outline: 3px solid var(--gold);
+    outline-offset: 0;
+}
+
+fieldset {
+    margin: 0 0 1.25rem;
+    padding: 1rem 1.25rem 0.25rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: 700;
+    color: var(--green-900);
+}
+
+main form button {
+    margin-top: 0.5rem;
+}
+
+/* Messages shown after a form is sent */
+p[role="status"][data-state="success"] {
+    color: var(--green-700);
+    font-weight: 600;
+}
+
+p[role="status"][data-state="error"] {
+    color: #a12a1b;
+    font-weight: 600;
+}
+
+/* Account details */
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 1.25rem 0 0;
+}
+
+dt {
+    font-weight: 700;
+    color: var(--green-900);
+}
+
+dd {
+    margin: 0;
+}
+
+/* Delete button on a card */
+article > button {
+    margin-top: auto;
+    background: var(--white);
+    border-color: #a12a1b;
+    color: #a12a1b;
+}
+
+article > button:hover {
+    background: #a12a1b;
+    color: var(--white);
+}
+
+address {
+    font-style: normal;
+    line-height: 1.9;
+}
+
+/* ---------- Footer ---------- */
+
+body > footer {
+    margin-top: 2rem;
+    padding: 2rem var(--gutter);
+    background: var(--green-900);
+    color: #dbe8d8;
+}
+
+body > footer p {
+    margin-bottom: 0.4rem;
+}
+
+body > footer a {
+    color: var(--gold);
+}
+
+body > footer a:hover {
+    color: #f7c85a;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 40rem) {
+    body > header nav {
+        margin-left: 0;
+    }
+
+    body > nav a {
+        padding: 0.7rem 0.8rem;
+    }
+
+    main > section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    main > section:first-child:not(:has(form)) {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    main > section:first-child:has(form) {
+        margin: 1rem;
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

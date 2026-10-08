@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" aria-current="page">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="products-heading">
+            <h1 id="products-heading">Products</h1>
+            <p>Crops, livestock, farm inputs, equipment and supplies from across Zambia's farming industry.</p>
+
+            <nav aria-label="Product categories">
+                <ul>
+                    <li><a href="#crops">Crops and Produce</a></li>
+                    <li><a href="#livestock">Livestock and Poultry</a></li>
+                    <li><a href="#inputs">Seeds and Fertilizer</a></li>
+                    <li><a href="#equipment">Farm Equipment</a></li>
+                    <li><a href="#feed">Animal Feed and Supplies</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section aria-labelledby="filter-heading">
+            <h2 id="filter-heading">Filter Products</h2>
+
+            <form action="products.html" method="get">
+                <p>
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="">All categories</option>
+                        <option value="farmer-listings">Latest from Farmers</option>
+                        <option value="crops">Crops and Produce</option>
+                        <option value="livestock">Livestock and Poultry</option>
+                        <option value="inputs">Seeds and Fertilizer</option>
+                        <option value="equipment">Farm Equipment</option>
+                        <option value="feed">Animal Feed and Supplies</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="sort">Sort by</label>
+                    <select id="sort" name="sort">
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                    </select>
+                </p>
+                <button type="submit">Apply</button>
+            </form>
+        </section>
+
+        <section id="farmer-listings" aria-labelledby="farmer-listings-heading" hidden>
+            <h2 id="farmer-listings-heading">Latest from Farmers</h2>
+            <p>Fresh listings added by farmers on AgriLink.</p>
+
+            <ul></ul>
+        </section>
+
+        <section id="crops" aria-labelledby="crops-heading">
+            <h2 id="crops-heading">Crops and Produce</h2>
+
+            <ul>
+                <li>
+                    <article id="maize">
+                        <figure>
+                            <img src="images/maize.jpg" alt="Maize">
+                            <figcaption><h3>Maize</h3></figcaption>
+                        </figure>
+                        <p>Category: Crops and Produce</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+                <li>
+                    <article id="tomatoes">
+                        <figure>
+                            <img src="images/tomatoes.jpg" alt="Tomatoes">
+                            <figcaption><h3>Tomatoes</h3></figcaption>
+                        </figure>
+                        <p>Category: Crops and Produce</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="livestock" aria-labelledby="livestock-heading">
+            <h2 id="livestock-heading">Livestock and Poultry</h2>
+
+            <ul>
+                <li>
+                    <article id="goats">
+                        <figure>
+                            <img src="images/goats.jpg" alt="Goats">
+                            <figcaption><h3>Goats</h3></figcaption>
+                        </figure>
+                        <p>Category: Livestock and Poultry</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+                <li>
+                    <article id="broilers">
+                        <figure>
+                            <img src="images/broilers.jpg" alt="Broiler Chickens">
+                            <figcaption><h3>Broiler Chickens</h3></figcaption>
+                        </figure>
+                        <p>Category: Livestock and Poultry</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="inputs" aria-labelledby="inputs-heading">
+            <h2 id="inputs-heading">Seeds and Fertilizer</h2>
+
+            <ul>
+                <li>
+                    <article id="maize-seed">
+                        <figure>
+                            <img src="images/maize-seed.jpg" alt="Hybrid Maize Seed">
+                            <figcaption><h3>Hybrid Maize Seed</h3></figcaption>
+                        </figure>
+                        <p>Category: Seeds and Fertilizer</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+                <li>
+                    <article id="fertilizer">
+                        <figure>
+                            <img src="images/fertilizer.jpg" alt="Fertilizer">
+                            <figcaption><h3>Fertilizer</h3></figcaption>
+                        </figure>
+                        <p>Category: Seeds and Fertilizer</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="equipment" aria-labelledby="equipment-heading">
+            <h2 id="equipment-heading">Farm Equipment</h2>
+
+            <ul>
+                <li>
+                    <article id="ploughs">
+                        <figure>
+                            <img src="images/ploughs.jpg" alt="Ploughs">
+                            <figcaption><h3>Ploughs</h3></figcaption>
+                        </figure>
+                        <p>Category: Farm Equipment</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+                <li>
+                    <article id="water-pumps">
+                        <figure>
+                            <img src="images/water-pumps.jpg" alt="Water Pumps">
+                            <figcaption><h3>Water Pumps</h3></figcaption>
+                        </figure>
+                        <p>Category: Farm Equipment</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="feed" aria-labelledby="feed-heading">
+            <h2 id="feed-heading">Animal Feed and Supplies</h2>
+
+            <ul>
+                <li>
+                    <article id="stock-feed">
+                        <figure>
+                            <img src="images/stock-feed.jpg" alt="Stock Feed">
+                            <figcaption><h3>Stock Feed</h3></figcaption>
+                        </figure>
+                        <p>Category: Animal Feed and Supplies</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+                <li>
+                    <article id="vet-supplies">
+                        <figure>
+                            <img src="images/vet-supplies.jpg" alt="Veterinary Supplies">
+                            <figcaption><h3>Veterinary Supplies</h3></figcaption>
+                        </figure>
+                        <p>Category: Animal Feed and Supplies</p>
+                        <p>Price: ZMW 0.00</p>
+                        <p>Available: 0</p>
+                        <a href="buyers.html#place-order">Order</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>

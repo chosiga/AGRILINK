@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="media/images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>  
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html" aria-current="page">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="farmers-heading">
+            <h1 id="farmers-heading">Farmers</h1>
+            <p>Sell your produce directly to buyers across Zambia.</p>
+
+            <a href="#list-produce">List Your Produce</a>
+            <a href="#featured-farmers">Meet Our Farmers</a>
+        </section>
+
+        <section aria-labelledby="benefits-heading">
+            <h2 id="benefits-heading">Why Sell With Us</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Reach More Buyers</h3>
+                        <p>Show your products to buyers in towns and cities.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Set Your Own Prices</h3>
+                        <p>You decide what your produce is worth.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Easy Delivery</h3>
+                        <p>Book a transporter to collect from your farm.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="featured-farmers" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Farmers</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <figure>
+                            <img src="images/farmer1.jpg" alt="Farmer standing in a maize field">
+                            <figcaption><h3>Farmer Name</h3></figcaption>
+                        </figure>
+                        <p>Location: Province, Zambia</p>
+                        <p>Grows: Maize, Soya beans</p>
+                        <a href="products.html">View Products</a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <figure>
+                            <img src="images/farmer2.jpg" alt="Farmer holding fresh tomatoes">
+                            <figcaption><h3>Farmer Name</h3></figcaption>
+                        </figure>
+                        <p>Location: Province, Zambia</p>
+                        <p>Grows: Tomatoes, Onions</p>
+                        <a href="products.html">View Products</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="list-produce" aria-labelledby="list-heading">
+            <h2 id="list-heading">List Your Produce</h2>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="farmer-name">Your name</label>
+                    <input type="text" id="farmer-name" name="name" required>
+                </p>
+                <p>
+                    <label for="location">Farm location</label>
+                    <input type="text" id="location" name="location" required>
+                </p>
+                <p>
+                    <label for="product">Product</label>
+                    <input type="text" id="product" name="product" required>
+                </p>
+                <p>
+                    <label for="quantity">Quantity (kg)</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </p>
+                <p>
+                    <label for="price">Price per kg (ZMW)</label>
+                    <input type="number" id="price" name="price" min="0" step="0.01" required>
+                </p>
+                <button type="submit">Submit Listing</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>

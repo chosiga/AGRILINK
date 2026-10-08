@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="media/images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>    
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html" aria-current="page">Transport</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="transport-heading">
+            <h1 id="transport-heading">Transport</h1>
+            <p>Find reliable transporters to move produce from the farm to the buyer.</p>
+
+            <a href="#request-transport">Request Transport</a>
+            <a href="#become-transporter">Become a Transporter</a>
+        </section>
+
+        <section aria-labelledby="how-heading">
+            <h2 id="how-heading">How Transport Works</h2>
+
+            <ol>
+                <li>
+                    <article>
+                        <h3>Post a Delivery</h3>
+                        <p>Farmers or buyers list what needs to be moved and where.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Get a Transporter</h3>
+                        <p>Available transporters respond with their price and vehicle.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Deliver</h3>
+                        <p>The produce is collected and delivered to the buyer.</p>
+                    </article>
+                </li>
+            </ol>
+        </section>
+
+        <section aria-labelledby="available-heading">
+            <h2 id="available-heading">Available Transporters</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <figure>
+                            <img src="images/truck.jpg" alt="Delivery truck">
+                            <figcaption><h3>Truck</h3></figcaption>
+                        </figure>
+                        <p>Best for large loads over long distances.</p>
+                        <a href="#request-transport">Book</a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <figure>
+                            <img src="images/pickup.jpg" alt="Pickup vehicle">
+                            <figcaption><h3>Pickup</h3></figcaption>
+                        </figure>
+                        <p>Best for small and medium loads.</p>
+                        <a href="#request-transport">Book</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="request-transport" aria-labelledby="request-heading">
+            <h2 id="request-heading">Request Transport</h2>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="pickup">Pickup location</label>
+                    <input type="text" id="pickup" name="pickup" required>
+                </p>
+                <p>
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </p>
+                <p>
+                    <label for="produce">Type of produce</label>
+                    <input type="text" id="produce" name="produce" required>
+                </p>
+                <p>
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" name="weight" min="1" required>
+                </p>
+                <p>
+                    <label for="date">Delivery date</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+
+        <section id="become-transporter" aria-labelledby="become-heading">
+            <h2 id="become-heading">Become a Transporter</h2>
+            <p>Own a vehicle? Register to receive delivery requests from farmers and buyers.</p>
+            <a href="#">Register as Transporter</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>

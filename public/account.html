@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | AgriLink Zambia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="account-heading">
+            <h1 id="account-heading">My Account</h1>
+            <p id="account-intro" role="status">Loading your account...</p>
+        </section>
+
+        <section id="profile" aria-labelledby="profile-heading" hidden>
+            <h2 id="profile-heading">Your Details</h2>
+            <dl id="profile-details"></dl>
+        </section>
+
+        <section id="my-listings" aria-labelledby="listings-heading" hidden>
+            <h2 id="listings-heading">My Listings</h2>
+            <p data-empty hidden>You have not listed any produce yet. <a href="farmers.html#list-produce">List your produce</a>.</p>
+            <ul></ul>
+        </section>
+
+        <section id="my-orders" aria-labelledby="orders-heading" hidden>
+            <h2 id="orders-heading">My Orders</h2>
+            <p data-empty hidden>You have not placed any orders yet. <a href="buyers.html#place-order">Place an order</a>.</p>
+            <ul></ul>
+        </section>
+
+        <section id="my-transport" aria-labelledby="transport-heading" hidden>
+            <h2 id="transport-heading">My Transport Requests</h2>
+            <p data-empty hidden>You have not requested any transport yet. <a href="transport.html#request-transport">Request transport</a>.</p>
+            <ul></ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+
+</html>
