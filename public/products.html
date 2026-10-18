@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search, compare, and buy agricultural produce and farm supplies from Zambian sellers.">
+    <title>Marketplace | AgriLink Zambia</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="products-page catalog-page">
+    <header>
+        <a href="index.html" aria-label="AgriLink Zambia home"><img src="images/logo.svg" alt="AgriLink Zambia"></a>
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products, categories, and descriptions</label>
+            <input type="search" id="site-search" name="q" placeholder="Search produce, supplies, or sellers">
+        </form>
+        <nav aria-label="Account">
+            <ul><li><a href="login.html">Sign in</a></li><li><a href="register.html">Join AgriLink</a></li></ul>
+        </nav>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" aria-current="page">Marketplace</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="products-hero" aria-labelledby="products-heading">
+            <p class="eyebrow">Zambian farms, one marketplace</p>
+            <h1 id="products-heading">Find your next harvest.</h1>
+            <p>Compare live prices, available quantities, seller ratings, and delivery options from growers across Zambia.</p>
+            <nav aria-label="Shop by product category">
+                <ul class="catalog-category-links">
+                    <li><a href="products.html?category=maize">Maize</a></li>
+                    <li><a href="products.html?category=tomatoes">Tomatoes</a></li>
+                    <li><a href="products.html?category=groundnuts">Groundnuts</a></li>
+                    <li><a href="products.html?category=soya-beans">Soya beans</a></li>
+                    <li><a href="products.html?category=vegetables">Vegetables</a></li>
+                    <li><a href="products.html?category=rice">Rice</a></li>
+                    <li><a href="products.html?category=fruits">Fruits</a></li>
+                    <li><a href="products.html?category=fertilizers-and-farming-supplies">Fertilizers &amp; supplies</a></li>
+                    <li><a href="products.html?category=other-agricultural-products">Other products</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="catalog-layout" aria-labelledby="catalog-heading">
+            <aside class="catalog-filters" aria-labelledby="filter-heading">
+                <div class="catalog-filter-heading">
+                    <h2 id="filter-heading">Filter listings</h2>
+                    <button type="button" id="clear-catalog-filters" class="secondary-button">Clear all</button>
+                </div>
+                <form id="catalog-filters" action="products.html" method="get">
+                    <p>
+                        <label for="catalog-search">Search products</label>
+                        <input type="search" id="catalog-search" name="q" placeholder="Name or description">
+                    </p>
+                    <p>
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="">All categories</option>
+                            <option value="maize">Maize</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="groundnuts">Groundnuts</option>
+                            <option value="soya-beans">Soya beans</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="rice">Rice</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="fertilizers-and-farming-supplies">Fertilizers and farming supplies</option>
+                            <option value="other-agricultural-products">Other agricultural products</option>
+                        </select>
+                    </p>
+                    <fieldset>
+                        <legend>Price per unit (ZMW)</legend>
+                        <div class="catalog-range-fields">
+                            <p><label for="price-min">Min</label><input type="number" id="price-min" name="priceMin" min="0" step="0.01" placeholder="0"></p>
+                            <p><label for="price-max">Max</label><input type="number" id="price-max" name="priceMax" min="0" step="0.01" placeholder="Any"></p>
+                        </div>
+                    </fieldset>
+                    <p>
+                        <label for="province">Province</label>
+                        <select id="province" name="province">
+                            <option value="">All Zambia</option>
+                            <option>Central</option><option>Copperbelt</option><option>Eastern</option><option>Luapula</option>
+                            <option>Lusaka</option><option>Muchinga</option><option>Northern</option><option>North-Western</option>
+                            <option>Southern</option><option>Western</option><option>Other</option>
+                        </select>
+                    </p>
+                    <fieldset>
+                        <legend>Quantity available (units)</legend>
+                        <div class="catalog-range-fields">
+                            <p><label for="quantity-min">At least</label><input type="number" id="quantity-min" name="quantityMin" min="0" step="0.01" placeholder="Any"></p>
+                            <p><label for="quantity-max">At most</label><input type="number" id="quantity-max" name="quantityMax" min="0" step="0.01" placeholder="Any"></p>
+                        </div>
+                    </fieldset>
+                    <p>
+                        <label for="min-rating">Seller rating</label>
+                        <select id="min-rating" name="minRating">
+                            <option value="">Any rating</option>
+                            <option value="5">5 stars</option>
+                            <option value="4">4 stars &amp; up</option>
+                            <option value="3">3 stars &amp; up</option>
+                            <option value="2">2 stars &amp; up</option>
+                            <option value="1">1 star &amp; up</option>
+                        </select>
+                    </p>
+                    <label class="catalog-check"><input type="checkbox" id="verified-only" name="verified" value="true"> Verified sellers</label>
+                    <label class="catalog-check"><input type="checkbox" id="delivery-only" name="delivery" value="true"> Delivery available</label>
+                    <button type="submit" class="catalog-apply">Apply filters</button>
+                </form>
+            </aside>
+
+            <section class="catalog-results" aria-labelledby="catalog-heading">
+                <div class="catalog-results-heading">
+                    <div>
+                        <p class="eyebrow">Live from sellers</p>
+                        <h2 id="catalog-heading">Agricultural products</h2>
+                    </div>
+                    <label for="sort">Sort by
+                        <select id="sort" name="sort">
+                            <option value="newest">Newest listings</option>
+                            <option value="price-low">Lowest price</option>
+                            <option value="price-high">Highest price</option>
+                            <option value="rating">Highest-rated sellers</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="catalog-status" role="status" aria-live="polite">Loading products…</p>
+                <ul id="catalog-listings" class="catalog-listings"></ul>
+                <nav id="catalog-pagination" class="catalog-pagination" aria-label="Product pages" hidden>
+                    <button type="button" id="catalog-previous">Previous</button>
+                    <span id="catalog-page-status"></span>
+                    <button type="button" id="catalog-next">Next</button>
+                </nav>
+                <div id="catalog-empty" class="catalog-empty" hidden>
+                    <h3>No products match your search yet</h3>
+                    <p>Try a broader search or remove a filter. New farmer listings appear here as soon as they are published.</p>
+                    <button type="button" id="catalog-empty-clear">Clear filters</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>AgriLink Zambia</strong> · Connecting farmers, buyers, and transporters.</p>
+        <p><a href="contact.html">Contact</a> · <a href="terms.html">Terms of use</a> · <a href="privacy.html">Privacy notice</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+</body>
+
+</html>

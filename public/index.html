@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy and sell fresh Zambian produce directly from local farmers on AgriLink Zambia.">
+    <title>AgriLink Zambia | Trade directly with local farms</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="home-page">
+    <header>
+        <a href="index.html" aria-label="AgriLink Zambia home">
+            <img src="images/logo.svg" alt="AgriLink Zambia">
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="products.html">Marketplace</a></li>
+                <li><a href="farmers.html">Farmers</a></li>
+                <li><a href="buyers.html">Buyers</a></li>
+                <li><a href="transport.html">Transport</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Sign in</a></li>
+                <li><a href="register.html">Join AgriLink</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="hero-shell">
+                <div class="hero-copy">
+                    <p class="eyebrow">Zambia's farm-to-market connection</p>
+                    <h1 id="hero-heading">Good food starts with a good connection.</h1>
+                    <p>Buy fresh produce directly from Zambian farmers, find new markets for your harvest, and move goods with local transporters.</p>
+
+                    <form class="home-hero-search" role="search" action="products.html" method="get">
+                        <label for="home-product-search" hidden>Search agricultural products</label>
+                        <input type="search" id="home-product-search" name="q" placeholder="What are you looking for?" aria-label="Search agricultural products">
+                        <button type="submit">Search</button>
+                    </form>
+
+                    <nav class="home-category-links" aria-label="Popular searches">
+                        <ul>
+                            <li><a href="products.html?q=maize">Maize</a></li>
+                            <li><a href="products.html?q=tomatoes">Tomatoes</a></li>
+                            <li><a href="products.html?q=beans">Beans</a></li>
+                            <li><a href="products.html?q=groundnuts">Groundnuts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-categories" aria-labelledby="categories-heading">
+            <div class="home-section-heading">
+                <div>
+                    <p class="eyebrow">Explore the marketplace</p>
+                    <h2 id="categories-heading">Shop by category</h2>
+                </div>
+                <a href="products.html">Browse all products <span aria-hidden="true">→</span></a>
+            </div>
+
+            <ul class="home-category-grid">
+                <li>
+                    <a class="home-category-card" href="products.html#crops">
+                        <img src="images/pexels-benjaminlehman-33902596.jpg" alt="" loading="lazy">
+                        <span>Crops &amp; produce</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="home-category-card" href="products.html#livestock">
+                        <img src="images/pexels-alistair-mockett-146505529-10444827.jpg" alt="" loading="lazy">
+                        <span>Livestock &amp; poultry</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="home-category-card" href="products.html#inputs">
+                        <img src="images/pexels-bingqian-li-230971044-33376735.jpg" alt="" loading="lazy">
+                        <span>Seeds &amp; fertilizer</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="home-category-card" href="products.html#equipment">
+                        <img src="images/pexels-clinton-weaver-143462690-38328331.jpg" alt="" loading="lazy">
+                        <span>Farm equipment</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="home-category-card" href="products.html#feed">
+                        <img src="images/pexels-couleur-6810986.jpg" alt="" loading="lazy">
+                        <span>Animal feed</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="home-products-section" aria-labelledby="featured-heading">
+            <div class="home-section-heading">
+                <div>
+                    <p class="eyebrow">Fresh from the farm</p>
+                    <h2 id="featured-heading">Latest farmer listings</h2>
+                    <p>Live offers from growers across Zambia. Prices and availability are set by each farmer.</p>
+                </div>
+                <a href="products.html">See all listings <span aria-hidden="true">→</span></a>
+            </div>
+            <p id="home-listings-status" class="home-live-status" role="status" aria-live="polite">Loading current listings…</p>
+            <ul id="home-listings" class="home-listing-grid"></ul>
+        </section>
+
+        <section class="home-farmers-section" aria-labelledby="farmers-heading">
+            <div class="home-section-heading">
+                <div>
+                    <p class="eyebrow">People behind the produce</p>
+                    <h2 id="farmers-heading">Meet Zambian farmers</h2>
+                    <p>Discover growers, their locations, and what they currently have available.</p>
+                </div>
+                <a href="farmers.html">Meet our farmers <span aria-hidden="true">→</span></a>
+            </div>
+            <p id="home-farmers-status" class="home-live-status" role="status" aria-live="polite">Loading farmer profiles…</p>
+            <ul id="home-farmers" class="home-farmer-grid"></ul>
+        </section>
+
+        <section class="home-join-section" aria-labelledby="join-heading">
+            <div>
+                <p class="eyebrow">Built for local trade</p>
+                <h2 id="join-heading">A better route from harvest to home.</h2>
+                <p>Find buyers, compare real listings, and coordinate delivery with a transporter—all in one place.</p>
+            </div>
+            <div class="home-join-actions">
+                <a href="register.html">Create your free account</a>
+                <a href="transport.html">Arrange transport</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-main">
+            <div class="site-footer-brand">
+                <a href="index.html" aria-label="AgriLink Zambia home">
+                    <img src="images/logo.svg" alt="AgriLink Zambia">
+                </a>
+                <p>Connecting Zambian farmers, buyers, and transporters.</p>
+            </div>
+            <nav aria-label="Marketplace">
+                <h2>Marketplace</h2>
+                <a href="products.html">Browse products</a>
+                <a href="farmers.html">Find farmers</a>
+                <a href="buyers.html">For buyers</a>
+                <a href="transport.html">Transport</a>
+            </nav>
+            <nav aria-label="Help and information">
+                <h2>Help &amp; information</h2>
+                <a href="about.html">About AgriLink</a>
+                <a href="contact.html">Contact our team</a>
+                <a href="terms.html">Terms of use</a>
+                <a href="privacy.html">Privacy notice</a>
+                <a href="register.html">Create an account</a>
+                <a href="login.html">Sign in</a>
+            </nav>
+        </div>
+        <div class="site-footer-bottom">
+            <p><small>&copy; 2026 AgriLink Zambia. Supporting local agriculture.</small></p>
+            <a href="contact.html">Questions? Get in touch</a>
+        </div>
+    </footer>
+</body>
+
+</html>

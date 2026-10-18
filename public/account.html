@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | AgriLink Zambia</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="account-heading">
+            <h1 id="account-heading">My Account</h1>
+            <p id="account-intro" role="status">Loading your account...</p>
+        </section>
+
+        <section id="notifications" aria-labelledby="notifications-heading" hidden>
+            <h2 id="notifications-heading">Notifications</h2>
+            <p data-empty hidden>Nothing new yet. Updates about your orders and deliveries will appear here.</p>
+            <ul></ul>
+        </section>
+
+        <section id="profile" aria-labelledby="profile-heading" hidden>
+            <h2 id="profile-heading">Your Details</h2>
+            <dl id="profile-details"></dl>
+        </section>
+
+        <section id="admin-dashboard" aria-labelledby="admin-heading" hidden>
+            <h2 id="admin-heading">Platform administration</h2>
+            <p>Review farmer profiles and manage verification status. Verification is shown publicly on farmer listings.</p>
+            <dl id="admin-metrics" class="admin-metrics"></dl>
+            <h3>Farmer verification</h3>
+            <p id="admin-farmers-status" role="status" aria-live="polite">Loading farmer accounts…</p>
+            <ul id="admin-farmers" class="admin-farmer-list"></ul>
+        </section>
+
+        <section id="my-listings" aria-labelledby="listings-heading" hidden>
+            <h2 id="listings-heading">My Listings</h2>
+            <p data-empty hidden>You have not listed any produce yet. <a href="farmers.html#list-produce">List your produce</a>.</p>
+            <ul></ul>
+        </section>
+
+        <section id="orders-received" aria-labelledby="received-heading" hidden>
+            <h2 id="received-heading">Orders Received</h2>
+            <p data-empty hidden>No orders yet. Buyers can order from your listings on the <a href="products.html">products page</a>.</p>
+            <ul></ul>
+        </section>
+
+        <section id="my-orders" aria-labelledby="orders-heading" hidden>
+            <h2 id="orders-heading">My Orders</h2>
+            <p data-empty hidden>You have not placed any orders yet. <a href="buyers.html#place-order">Place an order</a>.</p>
+            <ul></ul>
+        </section>
+
+        <section id="jobs-available" aria-labelledby="jobs-heading" hidden>
+            <h2 id="jobs-heading">Available Delivery Jobs</h2>
+            <p data-empty hidden>No delivery jobs are waiting right now. Please check back soon.</p>
+            <ul></ul>
+        </section>
+
+        <section id="my-jobs" aria-labelledby="my-jobs-heading" hidden>
+            <h2 id="my-jobs-heading">My Deliveries</h2>
+            <p data-empty hidden>You have not accepted any jobs yet.</p>
+            <ul></ul>
+        </section>
+
+        <section id="my-transport" aria-labelledby="transport-heading" hidden>
+            <h2 id="transport-heading">My Transport Requests</h2>
+            <p data-empty hidden>You have not requested any transport yet. <a href="transport.html#request-transport">Request transport</a>.</p>
+            <ul></ul>
+        </section>
+
+
+        <dialog id="edit-listing" aria-labelledby="edit-heading">
+            <form id="edit-listing-form">
+                <h2 id="edit-heading">Edit Listing</h2>
+                <p id="edit-product"></p>
+                <input type="hidden" name="id">
+                <input type="hidden" name="images" id="edit-images">
+                <p>
+                    <label for="edit-location">Farm location</label>
+                    <input type="text" id="edit-location" name="location" required>
+                </p>
+                <p>
+                    <label for="edit-province">Province</label>
+                    <select id="edit-province" name="province" required>
+                        <option>Central</option><option>Copperbelt</option><option>Eastern</option><option>Luapula</option>
+                        <option>Lusaka</option><option>Muchinga</option><option>Northern</option><option>North-Western</option>
+                        <option>Southern</option><option>Western</option><option>Other</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="edit-category">Category</label>
+                    <select id="edit-category" name="category" required>
+                        <option value="maize">Maize</option>
+                        <option value="tomatoes">Tomatoes</option>
+                        <option value="groundnuts">Groundnuts</option>
+                        <option value="soya-beans">Soya beans</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="rice">Rice</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="fertilizers-and-farming-supplies">Fertilizers and farming supplies</option>
+                        <option value="other-agricultural-products">Other agricultural products</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="edit-description">Product description</label>
+                    <textarea id="edit-description" name="description" rows="4" minlength="10" maxlength="2000" required></textarea>
+                </p>
+                <p>
+                    <label for="edit-unit">Unit of measurement</label>
+                    <select id="edit-unit" name="unit" required>
+                        <option value="kg">Kilogram (kg)</option><option value="bag">Bag</option><option value="tonne">Tonne</option>
+                        <option value="crate">Crate</option><option value="each">Each</option><option value="litre">Litre</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="edit-quantity">Available quantity</label>
+                    <input type="number" id="edit-quantity" name="quantity" min="0" step="0.01" required>
+                </p>
+                <p>
+                    <label for="edit-minimum-order">Minimum order quantity</label>
+                    <input type="number" id="edit-minimum-order" name="minimumOrder" min="0.01" step="0.01" required>
+                </p>
+                <p>
+                    <label for="edit-price">Price per unit (ZMW)</label>
+                    <input type="number" id="edit-price" name="price" min="0.01" step="0.01" required>
+                </p>
+                <p>
+                    <label for="edit-harvest-date">Harvest date (if applicable)</label>
+                    <input type="date" id="edit-harvest-date" name="harvestDate">
+                </p>
+                <p id="edit-current-images" class="edit-current-images" aria-live="polite"></p>
+                <p>
+                    <label for="edit-listing-images">Add product images (up to 5 total; JPEG, PNG, or WebP, max 1 MB each)</label>
+                    <input type="file" id="edit-listing-images" name="imageFiles" accept="image/jpeg,image/png,image/webp" multiple>
+                </p>
+                <label><input type="checkbox" name="deliveryAvailable" value="true"> Delivery is available</label>
+                <p id="edit-message" role="status"></p>
+                <div class="dialog-actions">
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="edit-cancel">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+
+</html>

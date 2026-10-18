@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers | AgriLink Zambia</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+     <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="AgriLink Zambia logo">
+        </a>
+
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+
+        <nav aria-label="Account">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>  
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html" aria-current="page">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section aria-labelledby="farmers-heading">
+            <h1 id="farmers-heading">Farmers</h1>
+            <p>Sell your produce directly to buyers across Zambia.</p>
+
+            <a href="#list-produce">List Your Produce</a>
+            <a href="#featured-farmers">Meet Our Farmers</a>
+        </section>
+
+        <section aria-labelledby="benefits-heading">
+            <h2 id="benefits-heading">Why Sell With Us</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Reach More Buyers</h3>
+                        <p>Show your products to buyers in towns and cities.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Set Your Own Prices</h3>
+                        <p>You decide what your produce is worth.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Easy Delivery</h3>
+                        <p>Book a transporter to collect from your farm.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="featured-farmers" class="farmer-directory-section" aria-labelledby="featured-heading">
+            <p class="eyebrow">Meet the growers</p>
+            <h2 id="featured-heading">Farmers and what they sell</h2>
+            <p>Browse active farmer profiles and the produce they currently have available.</p>
+            <p id="farmer-directory-status" role="status" aria-live="polite">Loading farmer profiles...</p>
+            <ul id="farmer-directory" class="farmer-directory"></ul>
+        </section>
+
+        <section id="list-produce" aria-labelledby="list-heading">
+            <h2 id="list-heading">List Your Produce</h2>
+
+            <form action="/api/listings" method="post">
+                <p>
+                    <label for="location">Farm location</label>
+                    <input type="text" id="location" name="location" required>
+                </p>
+                <p>
+                    <label for="province">Province</label>
+                    <select id="province" name="province" required>
+                        <option value="">Choose province</option>
+                        <option>Central</option><option>Copperbelt</option><option>Eastern</option><option>Luapula</option>
+                        <option>Lusaka</option><option>Muchinga</option><option>Northern</option><option>North-Western</option>
+                        <option>Southern</option><option>Western</option><option>Other</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="product">Product</label>
+                    <input type="text" id="product" name="product" required>
+                </p>
+                <p>
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Choose category</option>
+                        <option value="maize">Maize</option>
+                        <option value="tomatoes">Tomatoes</option>
+                        <option value="groundnuts">Groundnuts</option>
+                        <option value="soya-beans">Soya beans</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="rice">Rice</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="fertilizers-and-farming-supplies">Fertilizers and farming supplies</option>
+                        <option value="other-agricultural-products">Other agricultural products</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="description">Product description</label>
+                    <textarea id="description" name="description" rows="4" minlength="10" maxlength="2000" required></textarea>
+                </p>
+                <p>
+                    <label for="unit">Unit of measurement</label>
+                    <select id="unit" name="unit" required>
+                        <option value="kg">Kilogram (kg)</option>
+                        <option value="bag">Bag</option>
+                        <option value="tonne">Tonne</option>
+                        <option value="crate">Crate</option>
+                        <option value="each">Each</option>
+                        <option value="litre">Litre</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="quantity">Available quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="0" step="0.01" required>
+                </p>
+                <p>
+                    <label for="minimum-order">Minimum order quantity</label>
+                    <input type="number" id="minimum-order" name="minimumOrder" min="0.01" step="0.01" value="1" required>
+                </p>
+                <p>
+                    <label for="price">Price per unit (ZMW)</label>
+                    <input type="number" id="price" name="price" min="0.01" step="0.01" required>
+                </p>
+                <p>
+                    <label for="harvest-date">Harvest date (if applicable)</label>
+                    <input type="date" id="harvest-date" name="harvestDate">
+                </p>
+                <p>
+                    <label for="listing-images">Product images (up to 5; JPEG, PNG, or WebP, max 1 MB each)</label>
+                    <input type="file" id="listing-images" name="imageFiles" accept="image/jpeg,image/png,image/webp" multiple required>
+                </p>
+                <label><input type="checkbox" name="deliveryAvailable" value="true"> Delivery is available</label>
+                <button type="submit">Submit Listing</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgriLink Zambia</p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+
+</body>
+</html>

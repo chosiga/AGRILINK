@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View a Zambian agricultural product listing, seller details, and purchase options on AgriLink.">
+    <title>Product details | AgriLink Zambia</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="product-detail-page">
+    <header>
+        <a href="index.html" aria-label="AgriLink Zambia home"><img src="images/logo.svg" alt="AgriLink Zambia"></a>
+        <form role="search" action="products.html" method="get">
+            <label for="site-search" hidden>Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="Search products">
+        </form>
+        <nav aria-label="Account">
+            <ul><li><a href="login.html">Sign in</a></li><li><a href="register.html">Join AgriLink</a></li></ul>
+        </nav>
+    </header>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" aria-current="page">Marketplace</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p class="product-back-link"><a href="products.html">← Back to marketplace</a></p>
+        <p id="product-detail-status" role="status" aria-live="polite">Loading product details…</p>
+        <article id="product-detail" class="product-detail" hidden>
+            <section class="product-gallery" aria-label="Product images">
+                <img id="product-main-image" class="product-main-image" src="" alt="">
+                <div id="product-thumbnails" class="product-thumbnails" role="group" aria-label="Choose product image"></div>
+            </section>
+            <section class="product-summary" aria-labelledby="product-title">
+                <p id="product-category" class="eyebrow"></p>
+                <h1 id="product-title"></h1>
+                <p id="product-rating" class="product-detail-rating"></p>
+                <p id="product-price" class="product-detail-price"></p>
+                <dl id="product-facts" class="product-facts"></dl>
+                <p id="product-description"></p>
+                <p id="product-harvest"></p>
+                <p id="product-delivery"></p>
+                <p id="product-availability" class="product-availability"></p>
+                <a id="product-buy-link" class="product-buy-link" href="login.html">Sign in to order</a>
+                <p class="product-payment-note">Orders are sent to the farmer. Payment preferences do not charge you; agree payment terms directly after confirmation.</p>
+            </section>
+            <section class="product-seller" aria-labelledby="seller-heading">
+                <h2 id="seller-heading">About the seller</h2>
+                <p id="seller-name"></p>
+                <p id="seller-location"></p>
+                <p id="seller-trust"></p>
+                <a href="farmers.html#featured-farmers">Browse farmer directory</a>
+            </section>
+            <section class="product-reviews" aria-labelledby="reviews-heading">
+                <h2 id="reviews-heading">Buyer reviews</h2>
+                <p id="reviews-summary"></p>
+                <ul id="product-reviews-list"></ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p><strong>AgriLink Zambia</strong> · Connecting farmers, buyers, and transporters.</p>
+        <p><a href="contact.html">Contact</a> · <a href="terms.html">Terms of use</a> · <a href="privacy.html">Privacy notice</a></p>
+        <p><small>&copy; 2026 AgriLink Zambia</small></p>
+    </footer>
+</body>
+
+</html>
