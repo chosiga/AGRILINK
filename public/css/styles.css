@@ -968,6 +968,15 @@ article > button:hover {
     border-radius: 6px;
 }
 
+.order-estimate {
+    padding: 0.75rem 1rem;
+    border: 1px solid #d7e5d4;
+    border-radius: 0.55rem;
+    background: #f4f8f1;
+    color: var(--green-900);
+    font-weight: 650;
+}
+
 main input[readonly] {
     background: var(--green-100);
 }
@@ -2203,7 +2212,8 @@ main ul.farmer-products {
 
 .catalog-layout {
     display: grid;
-    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+    grid-template-columns: minmax(14rem, 17rem) minmax(0, 1fr);
+    align-items: start;
     gap: 1.5rem;
     max-width: var(--page-width);
     margin: 2rem auto;
@@ -2232,6 +2242,10 @@ main ul.farmer-products {
     color: var(--green-900);
     font-family: var(--font-body);
     font-size: 1.25rem;
+}
+
+.catalog-filter-heading h2 {
+    min-width: 0;
 }
 
 .catalog-filter-heading .secondary-button {
@@ -2350,6 +2364,9 @@ main ul.farmer-products {
 
 .catalog-results-heading .eyebrow {
     margin: 0 0 0.25rem;
+    border-color: transparent;
+    background: var(--green-100);
+    color: var(--green-700);
 }
 
 .catalog-results-heading > label {
@@ -2384,6 +2401,9 @@ main ul.farmer-products {
 .market-listing-image-link {
     display: block;
     overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
     background: var(--green-100);
 }
 
@@ -2441,6 +2461,39 @@ main ul.farmer-products {
     color: var(--white);
     font-weight: 700;
     text-decoration: none;
+}
+
+.market-listing-content > a:hover,
+.market-listing-content > a:focus-visible {
+    background: var(--green-900);
+}
+
+.market-listing-category {
+    margin: 0 0 0.35rem;
+    color: var(--copper);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.market-listing-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.market-listing-title-link:hover,
+.market-listing-title-link:focus-visible {
+    color: var(--green-700);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.catalog-status {
+    min-height: 1.5em;
+    margin: 0 0 1rem;
+    color: #59665a;
+    font-size: 0.95rem;
 }
 
 .catalog-pagination {
@@ -2628,6 +2681,12 @@ main ul.farmer-products {
 @media (max-width: 55rem) {
     .catalog-layout {
         grid-template-columns: 1fr;
+    }
+
+    .catalog-filters {
+        width: 100%;
+        max-width: 36rem;
+        justify-self: center;
     }
 
     .catalog-filters form {

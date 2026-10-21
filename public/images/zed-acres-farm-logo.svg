@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Zed Acres Farm</title>
+  <rect x="8" y="8" width="124" height="124" rx="30" fill="#176b43"/>
+  <circle cx="99" cy="38" r="13" fill="#e5b94f"/>
+  <path d="M69 91V54m0 20c-14-3-23-12-25-25 14 2 23 11 25 25Zm0-12c2-14 11-23 25-25-2 14-11 23-25 25Z" fill="none" stroke="#c5e39b" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M31 101c23-11 48-11 75 0M31 114c23-9 48-9 75 0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="5"/>
+  <text x="158" y="68" fill="#193329" font-family="Manrope, 'DM Sans', Arial, sans-serif" font-size="43" font-weight="800">ZED ACRES</text>
+  <text x="161" y="108" fill="#176b43" font-family="'DM Sans', Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="7">FARM</text>
+</svg>

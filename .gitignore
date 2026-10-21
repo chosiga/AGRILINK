@@ -1,18 +1,24 @@
 # Dependencies
 node_modules/
-.env/
-wallet/
-wallet_*/
 
-# Environment variables
+# Local environment and Oracle wallet files
 .env
 .env.*
 !.env.example
+wallet/
+wallet_*/
+*.p12
+*.pem
+*.jks
+*.sso
 
-# macOS
-.DS_Store
+# Uploaded runtime assets
+public/uploads/
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+
+# macOS
+.DS_Store

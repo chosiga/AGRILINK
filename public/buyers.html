@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyers | AgriLink Zambia</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
 </head>
 
@@ -45,11 +45,6 @@
         <section aria-labelledby="buyers-heading">
             <h1 id="buyers-heading">Buyers</h1>
             <p>Buy fresh produce straight from Zambian farmers.</p>
-            <figure class="feature-image">
-                <img src="images/pexels-cafer-sevi-nc-2150308909-34100648.jpg" alt="Fresh tomatoes growing on the vine" loading="lazy">
-                <figcaption>Source fresh produce directly from local farmers.</figcaption>
-            </figure>
-
             <a href="products.html">Browse Products</a>
             <a href="#place-order">Place a Bulk Order</a>
         </section>
@@ -126,6 +121,7 @@
                     <label for="buyer-quantity">Quantity (kg for general requests)</label>
                     <input type="number" id="buyer-quantity" name="quantity" min="0.01" step="0.01" required>
                 </p>
+                <p id="order-estimate" class="order-estimate" role="status" aria-live="polite" hidden></p>
                 <p>
                     <label for="delivery-address">Delivery address</label>
                     <textarea id="delivery-address" name="address" rows="3" required></textarea>

@@ -103,13 +103,25 @@
         image.src = listingImages(listing)[0];
         image.alt = `${listing.product} available from ${listing.farmerName}`;
         image.loading = 'lazy';
+        image.addEventListener('error', () => {
+            image.src = '/images/back.jpg';
+            image.alt = 'Agricultural products';
+        }, { once: true });
         imageLink.append(image);
 
         const content = document.createElement('div');
         content.className = 'market-listing-content';
         const title = document.createElement('h3');
         title.className = 'market-listing-title';
-        title.textContent = listing.product; // textContent keeps farmers' text from being run as HTML
+        const titleLink = document.createElement('a');
+        titleLink.className = 'market-listing-title-link';
+        titleLink.href = imageLink.href;
+        titleLink.textContent = listing.product;
+        title.append(titleLink);
+
+        const category = document.createElement('p');
+        category.className = 'market-listing-category';
+        category.textContent = categoryLabels[listing.category] || 'Agricultural products';
 
         const price = document.createElement('p');
         price.className = 'market-listing-price';
@@ -159,7 +171,7 @@
         const availability = document.createElement('span');
         availability.className = 'catalog-availability';
         availability.textContent = listing.availabilityStatus === 'available' ? 'In stock' : 'Sold out';
-        content.append(title, price, ...details, seller, rating, summary, harvest, delivery, availability, order);
+        content.append(category, title, price, ...details, seller, rating, summary, harvest, delivery, availability, order);
         card.append(imageLink, content);
         item.append(card);
         return item;
@@ -552,6 +564,8 @@
         let page = Math.max(1, Number(pageParams.get('page')) || 1);
         let totalPages = 1;
         let searchTimer;
+        let activeRequest;
+        let requestId = 0;
 
         const fields = ['q', 'category', 'priceMin', 'priceMax', 'province', 'quantityMin', 'quantityMax', 'minRating'];
         fields.forEach((name) => {
@@ -580,17 +594,22 @@
         const loadPage = async ({ resetPage = false, updateUrl = true } = {}) => {
             if (resetPage) page = 1;
             const params = queryFromForm();
+            const currentRequestId = ++requestId;
+            activeRequest?.abort();
+            activeRequest = new AbortController();
             if (updateUrl) {
                 const query = params.toString();
                 window.history.replaceState({}, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
             }
             status.textContent = 'Loading products…';
+            list.setAttribute('aria-busy', 'true');
             empty.hidden = true;
             pagination.hidden = true;
             try {
-                const response = await fetch(`/api/listings?${params}`);
+                const response = await fetch(`/api/listings?${params}`, { signal: activeRequest.signal });
                 const result = await response.json();
                 if (!response.ok) throw new Error(result.message || 'Products could not be loaded.');
+                if (currentRequestId !== requestId) return;
                 list.replaceChildren(...result.listings.map(renderListing));
                 totalPages = Math.max(1, result.pagination.totalPages);
                 page = result.pagination.page;
@@ -603,11 +622,18 @@
                 document.getElementById('catalog-previous').disabled = page <= 1;
                 document.getElementById('catalog-next').disabled = page >= totalPages;
             } catch (error) {
+                if (currentRequestId !== requestId) return;
                 list.replaceChildren();
                 empty.hidden = true;
+                if (error instanceof Error && error.name === 'AbortError') return;
                 status.textContent = error instanceof Error
                     ? `${error.message} Please try again.`
                     : 'Products could not be loaded. Please try again.';
+            } finally {
+                if (currentRequestId === requestId) {
+                    list.removeAttribute('aria-busy');
+                    activeRequest = undefined;
+                }
             }
         };
 
@@ -690,9 +716,25 @@
             quantityLabel.textContent = `Quantity (${listing.unit})`;
             status.textContent = `${listing.product} · ZMW ${Number(listing.pricePerKg).toFixed(2)} / ${listing.unit} · ${Number(listing.quantityKg).toLocaleString('en-ZM')} ${listing.unit} available · minimum ${Number(listing.minimumOrderQuantity).toLocaleString('en-ZM')} ${listing.unit}`;
             status.hidden = false;
+            const estimate = document.getElementById('order-estimate');
+            const updateEstimate = () => {
+                const requestedQuantity = quantity.valueAsNumber;
+                if (!Number.isFinite(requestedQuantity)
+                    || requestedQuantity < listing.minimumOrderQuantity
+                    || requestedQuantity > listing.quantityKg) {
+                    estimate.textContent = `Enter a quantity from ${Number(listing.minimumOrderQuantity).toLocaleString('en-ZM')} to ${Number(listing.quantityKg).toLocaleString('en-ZM')} ${listing.unit}.`;
+                    return;
+                }
+                const total = requestedQuantity * Number(listing.pricePerKg);
+                estimate.textContent = `Estimated product value: ZMW ${total.toLocaleString('en-ZM', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}. The farmer confirms the final order and delivery terms; no payment is taken here.`;
+            };
+            quantity.addEventListener('input', updateEstimate);
+            estimate.hidden = false;
+            updateEstimate();
             if (listing.availabilityStatus !== 'available') {
                 status.textContent = `${listing.product} is currently sold out. Browse the marketplace for other products.`;
                 form.querySelector('button[type="submit"]').disabled = true;
+                estimate.hidden = true;
                 const browseLink = document.createElement('a');
                 browseLink.href = 'products.html';
                 browseLink.textContent = 'Browse available products';

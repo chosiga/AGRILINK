@@ -1,0 +1,19 @@
+{
+  "name": "agrilink-zambia",
+  "version": "1.0.0",
+  "description": "AgriLink Zambia - marketplace for farmers, buyers and transporters",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^18.0.6",
+    "express": "^5.3.0",
+    "oracledb": "^7.0.1"
+  }
+}
