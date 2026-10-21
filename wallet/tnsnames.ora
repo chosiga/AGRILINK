@@ -1,0 +1,12 @@
+agrilinkdb_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.af-johannesburg-1.oraclecloud.com))(connect_data=(service_name=g9945a2809a89c0_agrilinkdb_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+agrilinkdb_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.af-johannesburg-1.oraclecloud.com))(connect_data=(service_name=g9945a2809a89c0_agrilinkdb_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+agrilinkdb_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.af-johannesburg-1.oraclecloud.com))(connect_data=(service_name=g9945a2809a89c0_agrilinkdb_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+agrilinkdb_tp = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.af-johannesburg-1.oraclecloud.com))(connect_data=(service_name=g9945a2809a89c0_agrilinkdb_tp.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+agrilinkdb_tpurgent = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.af-johannesburg-1.oraclecloud.com))(connect_data=(service_name=g9945a2809a89c0_agrilinkdb_tpurgent.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+
